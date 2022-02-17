@@ -33,7 +33,7 @@ class Mention extends Model
      */
     public function recipient(): Model
     {
-        return $this->recipient_type::findOrFail($this->recipient_id);
+        return $this->recipient_type::withTrashed()->findOrFail($this->recipient_id);
     }
 
     /**
